@@ -1,0 +1,687 @@
+meta: config/boards/hellen_meta.h
+
+pins:
+  - pin: A1
+    meta: H144_LS_1
+    function: Injector 1 Output
+    class: outputs
+    type: inj
+    ts_name: A1  - INJ 1
+    color: blue
+
+  - pin: A2
+    meta: H144_LS_4
+    function: Injector 4 Output
+    class: outputs
+    type: inj
+    ts_name: A2  - INJ 4
+    color: blue
+
+  - pin: A3
+    meta: H144_LS_2
+    function: Injector 2 Output
+    class: outputs
+    type: inj
+    ts_name: A2  - INJ 2
+    color: blue
+
+  - pin: A4
+    meta: H144_OUT_PWM7
+    class: outputs
+    function: Vtec solineod 
+    type: ls
+    ts_name: A4  - VTS/HS1
+    color: purple
+
+  - pin: A5
+    meta: H144_LS_3
+    function: Injector 3 Output
+    class: outputs
+    type: inj
+    ts_name: A5  - INJ 3
+    color: blue
+
+  - pin: A6
+    meta: H144_IGN_6
+    function: Tach Output
+    class: outputs
+    type: ls
+    ts_name: A6  - TACH
+    color: blue
+
+  - pin: A7
+    meta: H144_OUT_IO11
+    class: outputs
+    function: Fuel Pump Relay Output
+    type: ls
+    ts_name: A7  - FP Rly
+    color: purple
+
+  - pin: A8
+    meta: H144_IGN_1
+    class: outputs
+    function: Smart Ignition 1 Output
+    type: ign
+    ts_name: A8  - IGN 1
+    color: yellow
+
+  - pin: A9
+    meta: H144_OUT_PWM2
+    class: outputs
+    function: Idle Output (low)
+    type: ls
+    ts_name: A9  - IACV/PWM1
+    color: purple
+
+  - pin: A10
+    meta: H144_IGN_2
+    class: outputs
+    function: Smart Ignition 2 Output
+    type: ign
+    ts_name: A10 - IGN 2
+    color: yellow
+
+  - pin: A11
+    meta: H144_OUT_PWM3
+    class: outputs
+    function: PWM1 Output (low)
+    type: ls
+    ts_name: A11 - EGR/PWM2
+    color: purple
+
+  - pin: A12
+    meta: H144_OUT_IO8
+    class: outputs
+    function: Fan Relay Output (low)
+    type: ls
+    ts_name: A12 - FAN Rly
+    color: purple
+
+  - pin: A13
+    meta: H144_OUT_IO7
+    class: outputs
+    function: MIL Output (low)
+    type: ls
+    ts_name: A13 - MIL CTR
+    color: purple
+
+  - pin: A14
+    meta: H144_IGN_3
+    class: outputs
+    function: Smart Ignition 3 Output
+    type: ign
+    ts_name: A14 - IGN 3
+    color: yellow
+
+  - pin: A15
+    meta: H144_OUT_IO4
+    class: outputs
+    function: AC compressor relay Output (low)
+    type: ls
+    ts_name: A15 - AC Rly
+    color: purple
+
+  - pin: A16
+    meta: H144_OUT_IO13
+    class: outputs
+    function: Alt control Output (low)
+    type: ls
+    ts_name: A16 - Alt CTR
+    color: purple
+
+  - pin: A17
+    meta: H144_OUT_PWM5
+    class: outputs
+    function: IAB/PWM Output (low)
+    type: ls
+    ts_name: A17 - IAB/PWM3
+    color: purple
+
+  - pin: A18
+    meta: H144_OUT_PWM6
+    class: outputs
+    function: HS2 Output
+    type: hs
+    ts_name: A18 - HS2
+    color: purple
+
+  - pin: A19
+    function: ETB+
+    type: etb
+    color: blue
+
+  - pin: A20
+    function: ETB-
+    type: etb
+    color: blue
+
+  - pin: A21
+    meta: H144_IGN_5
+    class: outputs
+    function: ICM Ignition Output
+    type: ign
+    ts_name: A21 - ICM CTR
+    color: yellow
+
+  - pin: A22
+    meta: H144_IGN_4
+    class: outputs
+    function: Smart Ignition 4 Output
+    type: ign
+    ts_name: A22 - IGN 4
+    color: yellow
+
+  - pin: A23
+    function: Power Ground
+    type: gnd
+    color: black
+
+  - pin: A24
+    function: Power Ground
+    type: gnd
+    color: black
+
+  - pin: A25
+    meta: H144_IN_VBATT
+    class: analog_inputs
+    function: +12V
+    ts_name: A25 - BAT VOLT
+    type: 12v
+    color: red
+
+  - pin: A26
+    function: Power Ground
+    type: gnd
+    color: black
+
+  - pin: B1
+    function: +12V
+    type: 12V
+    color: red
+
+  - pin: B2
+    function: Power Ground
+    type: gnd
+    color: black
+
+  - pin: B5
+    meta: H144_IN_D_2
+    class: switch_inputs
+    function: AC / DIN2
+    type: hall
+    ts_name: B5  - AC/DIN1
+    color: gray
+
+  - pin: B6
+    meta: H144_IN_D_1
+    class: event_inputs
+    function: DIN1
+    type: hall
+    ts_name: B6  - DIN2
+    color: gray
+
+  - pin: B7
+    meta: H144_IN_SENS1
+    class: switch_inputs
+    function: Clutch / Digital Input 3
+    type: hall
+    ts_name: B7  - CLUTCH/DIN3
+    color: gray
+
+  - pin: B8
+    meta: H144_IN_SENS2
+    class: event_inputs
+    function: Power steering switch / Digital Input 4
+    type: hall
+    ts_name: B8  - PSSW/DIN4
+    color: gray
+
+  - pin: B10
+    meta: H144_IN_SENS3
+    class: event_inputs
+    function: VSS /Digital Input 5
+    type: hall
+    ts_name: B10 - VSS/DIN5
+    color: gray
+
+  - pin: B11
+    meta: H144_IN_D_4
+    class: event_inputs
+    function: Cam Sensor (VR)+
+    type: hall
+    ts_name: B11 - CMP/DIN6
+    color: gray
+
+  - pin: B12
+    function: Cam Sensor (VR)-
+    type: hall
+    color: gray
+
+  - pin: B15
+    meta: H144_IN_D_3
+    class: event_inputs
+    function: Crank Sensor (VR)+
+    type: hall
+    ts_name: B15 - CKP/DIN7
+    color: gray
+
+  - pin: B16
+    function: Crank Sensor (VR)-
+    type: hall
+    color: gray
+
+  - pin: D1
+    function: Constant +12v
+    type: 12v
+    color: red
+
+  - pin: D2
+    meta: H144_IN_SENS4
+    class: switch_inputs
+    function: Brake / Digital Input 6 (12v)
+    type: hall
+    ts_name: D2  - Brk/DIN8
+    color: gray
+
+  - pin: D3
+    ts_name: D9 - KNOCK
+    function: Knock Sensor
+    color: green
+
+  - pin: D4
+    meta: H144_IN_CAM
+    class: switch_inputs
+    function: Service Engine Check / General input 1
+    type: hall
+    ts_name: D4  - SCS/RES1
+    color: green
+
+  - pin: D5
+    meta: H144_IN_PPS
+    class: analog_inputs
+    function: Analog 1 - PPS
+    ts_name: D5  - AIN1
+    color: orange
+
+  - pin: D6
+    meta: H144_IN_CRANK
+    class: switch_inputs
+    function: Vtec Presure switch / General Input 2
+    ts_name: D6  - VTPSW/RES2
+    color: brown
+
+  - pin: D7
+    meta: H144_IN_MAP1
+    class: analog_inputs
+    ts_name: D7  - AIN2
+    function: Analog Input 2 / MAP1
+    color: orange
+
+  - pin: D8
+    meta: H144_IN_O2S2
+    class: analog_inputs
+    ts_name: D8  - AIN3
+    function: Analog Aux1 Input
+    color: orange
+
+  - pin: D9
+    meta: H144_IN_MAP2
+    class: analog_inputs
+    ts_name: D9  - AIN4
+    function: Analog Input 4 / MAP2
+    color: orange
+
+  - pin: D10
+    meta: H144_IN_AUX4
+    class: analog_inputs
+    ts_name: D10 - AIN5/TIN1
+    function: Analog Input 5 / AUX4
+    color: orange
+
+  - pin: D11
+    meta: H144_IN_TPS
+    class: analog_inputs
+    function: TPS Sensor Input
+    ts_name: D11 - TPS/AIN6
+    color: orange
+
+  - pin: D12
+    meta: H144_IN_AUX2
+    class: analog_inputs
+    ts_name: D12 - AIN7/TIN2
+    function: Analog Input 7 / AUX2
+    color: orange
+
+  - pin: D13
+    meta: H144_IN_CLT
+    class: analog_inputs 
+    function: ECT/CLT Sensor Input
+    ts_name: D13 - ECT/TIN3
+    color: orange
+
+  - pin: D14
+    meta: H144_IN_O2S
+    class: analog_inputs
+    function: O2 Sensor Input / Analog input 8
+    ts_name: D14 - O2/AIN8
+    color: orange
+
+  - pin: D15
+    meta: H144_IN_IAT
+    class: analog_inputs
+    function: IAT Sensor Input
+    ts_name: D15 - IAT/TIN4
+    color: orange
+
+  - pin: D16
+    meta: H144_IN_AUX3
+    class: analog_inputs
+    function: Analog input 9
+    ts_name: D16 - AIN9
+    color: orange
+
+  - pin: D17
+    meta: H144_IN_MAP3
+    class: analog_inputs
+    function: MAP Sensor Input / Analog input 10
+    ts_name: D17 - MAP/AIN10
+    color: orange
+
+  - pin: D18
+    meta: H144_IN_AUX1
+    class: analog_inputs
+    function: Analog input 9
+    ts_name: D18 - AIN11
+    color: orange
+
+  - pin: D19
+    function: Sensor +5v Power Feed
+    type: 5v
+    color: orange
+
+  - pin: D20
+    function: Sensor +5v Power Feed
+    type: 5v
+    color: orange
+
+  - pin: D21
+    function: Sensor Ground Referance
+    type: grd
+    color: brown
+
+  - pin: D22
+    function: Sensor Ground Referance
+    type: grd
+    color: brown
+
+info:
+  title: VTHPNP
+  name: VTHPNP
+  board_url: https://rusefi.com/s/vthpnp
+  directory: hellen/vthpnp
+  image:
+    file: vthpnp.jpg
+  pins:
+    - pin: A1
+      x: 450
+      y: 450
+
+    - pin: A2
+      x: 450
+      y: 610
+
+    - pin: A3
+      x: 550
+      y: 450
+
+    - pin: A4
+      x: 550
+      y: 610
+
+    - pin: A5
+      x: 650
+      y: 450
+
+    - pin: A6
+      x: 650
+      y: 610
+
+    - pin: A7
+      x: 750
+      y: 485
+
+    - pin: A8
+      x: 750
+      y: 650
+
+    - pin: A9
+      x: 840
+      y: 485
+
+    - pin: A10
+      x: 840
+      y: 650
+
+    - pin: A11
+      x: 930
+      y: 485
+
+    - pin: A12
+      x: 940
+      y: 650
+
+    - pin: A13
+      x: 1020
+      y: 485
+
+    - pin: A14
+      x: 1020
+      y: 650
+
+    - pin: A15
+      x: 1110
+      y: 485
+
+    - pin: A16
+      x: 1110
+      y: 650
+
+    - pin: A17
+      x: 1200
+      y: 485
+
+    - pin: A18
+      x: 1200
+      y: 650
+
+    - pin: A19
+      x: 1290
+      y: 485
+
+    - pin: A20
+      x: 1290
+      y: 650
+
+    - pin: A21
+      x: 1380
+      y: 485
+
+    - pin: A22
+      x: 1380
+      y: 650
+
+    - pin: A23
+      x: 1475
+      y: 450
+
+    - pin: A24
+      x: 1475
+      y: 620
+
+    - pin: A25
+      x: 1575
+      y: 450
+
+    - pin: A26
+      x: 1575
+      y: 620
+
+    - pin: B1
+      x: 1750
+      y: 490
+
+    - pin: B2
+      x: 1750
+      y: 650
+
+    - pin: B3
+      x: 1850
+      y: 490
+
+    - pin: B4
+      x: 1850
+      y: 650
+
+    - pin: B5
+      x: 1940
+      y: 490
+
+    - pin: B6
+      x: 1940
+      y: 650
+
+    - pin: B7
+      x: 2030
+      y: 490
+
+    - pin: B8
+      x: 2030
+      y: 650
+
+    - pin: B9
+      x: 2110
+      y: 490
+
+    - pin: B10
+      x: 2110
+      y: 650
+
+    - pin: B11
+      x: 2206
+      y: 490
+
+    - pin: B12
+      x: 2206
+      y: 650
+
+    - pin: B13
+      x: 2300
+      y: 490
+
+    - pin: B14
+      x: 2300
+      y: 650
+
+    - pin: B15
+      x: 2290
+      y: 490
+
+    - pin: B16
+      x: 2290
+      y: 650
+
+    - pin: B17
+      x: 2390
+      y: 490
+
+    - pin: B18
+      x: 2390
+      y: 650
+
+    - pin: D1
+      x: 2575
+      y: 460
+
+    - pin: D2
+      x: 2575
+      y: 630
+
+    - pin: D3
+      x: 2665
+      y: 500
+
+    - pin: D4
+      x: 2665
+      y: 655
+
+    - pin: D5
+      x: 2750
+      y: 500
+
+    - pin: D6
+      x: 2750
+      y: 655
+
+    - pin: D7
+      x: 2845
+      y: 500
+
+    - pin: D8
+      x: 2845
+      y: 655
+
+    - pin: D9
+      x: 2930
+      y: 500
+
+    - pin: D10
+      x: 2930
+      y: 655
+
+    - pin: D11
+      x: 3020
+      y: 500
+
+    - pin: D12
+      x: 3020
+      y: 655
+
+    - pin: D13
+      x: 3110
+      y: 500
+
+    - pin: D14
+      x: 3110
+      y: 655
+
+    - pin: D15
+      x: 3200
+      y: 500
+
+    - pin: D16
+      x: 3200
+      y: 655
+
+    - pin: D17
+      x: 3285
+      y: 500
+
+    - pin: D18
+      x: 3285
+      y: 655
+
+    - pin: D19
+      x: 3390
+      y: 450
+
+    - pin: D20
+      x: 3390
+      y: 625
+
+    - pin: D21
+      x: 3490
+      y: 450
+
+    - pin: D22
+      x: 3490
+      y: 625
