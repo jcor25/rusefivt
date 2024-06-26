@@ -346,10 +346,10 @@ pins:
     color: orange
 
   - pin: D12
-    meta: H144_IN_AUX2
+    meta: H144_IN_AUX1
     class: analog_inputs
     ts_name: D12 - AIN7/TIN2
-    function: Analog Input 7 / AUX2
+    function: Analog Input 7 / AUX1
     color: orange
 
   - pin: D13
@@ -388,7 +388,7 @@ pins:
     color: orange
 
   - pin: D18
-    meta: H144_IN_AUX1
+    meta: H144_IN_AUX2
     class: analog_inputs
     function: Analog input 9
     ts_name: D18 - AIN11
