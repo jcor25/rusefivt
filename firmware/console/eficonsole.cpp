@@ -51,6 +51,17 @@ static void printUid() {
 }
 #endif
 
+/*
+ * I was a little bit surprised that we declare __attribute__((weak)) before returning type in a function definition.
+ * In the most sources this declaration is placed either before function name or after function parentheses, see:
+ * - https://gcc.gnu.org/onlinedocs/gcc-4.0.0/gcc/Function-Attributes.html#Function-Attributes
+ * - https://en.wikipedia.org/wiki/Weak_symbol
+ * But it looks like our manner of __attribute__((weak)) declaration works at well, and I hope it will not cause
+ * problems in the future.
+ */
+BOARD_WEAK void boardSayHello() {
+}
+
 static void sayHello() {
 	efiPrintf(PROTOCOL_HELLO_PREFIX " rusEFI LLC (c) 2012-2024. All rights reserved.");
 	efiPrintf(PROTOCOL_HELLO_PREFIX " rusEFI v%d@%d now=%d", getRusEfiVersion(), /*do we have a working way to print 64 bit values?!*/(int)SIGNATURE_HASH, (int)getTimeNowMs());
@@ -60,6 +71,8 @@ static void sayHello() {
 #if EFI_USE_OPENBLT
 	efiPrintf(PROTOCOL_HELLO_PREFIX " with OPENBLT");
 #endif
+
+  boardSayHello();
 
 #if EFI_PROD_CODE && ENABLE_AUTO_DETECT_HSE
 	extern float hseFrequencyMhz;

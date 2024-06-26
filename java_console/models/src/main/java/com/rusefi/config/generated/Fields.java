@@ -1,6 +1,6 @@
 package com.rusefi.config.generated;
 
-// this file was generated automatically by rusEFI tool config_definition-all.jar based on (unknown script) integration/rusefi_config.txt Sun Jun 23 21:46:00 UTC 2024
+// this file was generated automatically by rusEFI tool config_definition-all.jar based on (unknown script) integration/rusefi_config.txt Wed Jun 26 20:58:20 UTC 2024
 
 // by class com.rusefi.output.FileJavaFieldsConsumer
 import com.rusefi.config.*;
@@ -41,6 +41,14 @@ public class Fields {
 	public static final int adc_channel_e_EFI_ADC_38 = 39;
 	public static final int adc_channel_e_EFI_ADC_39 = 40;
 	public static final int adc_channel_e_EFI_ADC_4 = 5;
+	public static final int adc_channel_e_EFI_ADC_40 = 41;
+	public static final int adc_channel_e_EFI_ADC_41 = 42;
+	public static final int adc_channel_e_EFI_ADC_42 = 43;
+	public static final int adc_channel_e_EFI_ADC_43 = 44;
+	public static final int adc_channel_e_EFI_ADC_44 = 45;
+	public static final int adc_channel_e_EFI_ADC_45 = 46;
+	public static final int adc_channel_e_EFI_ADC_46 = 47;
+	public static final int adc_channel_e_EFI_ADC_47 = 48;
 	public static final int adc_channel_e_EFI_ADC_5 = 6;
 	public static final int adc_channel_e_EFI_ADC_6 = 7;
 	public static final int adc_channel_e_EFI_ADC_7 = 8;
@@ -48,7 +56,7 @@ public class Fields {
 	public static final int adc_channel_e_EFI_ADC_9 = 10;
 	public static final int adc_channel_e_EFI_ADC_ERROR = 50;
 	public static final int adc_channel_e_EFI_ADC_NONE = 0;
-	public static final int adc_channel_e_EFI_ADC_TOTAL_CHANNELS = 41;
+	public static final int adc_channel_e_EFI_ADC_TOTAL_CHANNELS = 49;
 	public static final int ADC_CHANNEL_NONE = 0;
 	public static final int afr_sensor_s_size = 20;
 	public static final int air_pressure_sensor_config_s_size = 12;
@@ -1199,6 +1207,7 @@ public class Fields {
 	public static final int SentEtbType_FORD_TYPE_1 = 2;
 	public static final int SentEtbType_GM_TYPE_1 = 1;
 	public static final int SentEtbType_NONE = 0;
+	public static final int SIGNATURE_HASH = 798788302;
 	public static final String SIMULATOR_TUNE_BIN_FILE_NAME = "generated/simulator_tune_image.bin";
 	public static final String SIMULATOR_TUNE_BIN_FILE_NAME_PREFIX = "generated/simulator_tune_image";
 	public static final String SIMULATOR_TUNE_BIN_FILE_NAME_SUFFIX = ".bin";
@@ -1455,11 +1464,11 @@ public class Fields {
 	public static final int TS_RESPONSE_UNDERRUN = 0x80;
 	public static final int TS_RESPONSE_UNRECOGNIZED_COMMAND = 0x83;
 	public static final char TS_SET_LOGGER_SWITCH = 'l';
-	public static final String TS_SIGNATURE = "rusEFI master.2024.06.23.f407-discovery.3997634693";
+	public static final String TS_SIGNATURE = "rusEFI master.2024.06.26.f407-discovery.798788302";
 	public static final char TS_SIMULATE_CAN = '>';
 	public static final char TS_SINGLE_WRITE_COMMAND = 'W';
 	public static final char TS_TEST_COMMAND = 't';
-	public static final int TS_TOTAL_OUTPUT_SIZE = 1752;
+	public static final int TS_TOTAL_OUTPUT_SIZE = 1760;
 	public static final String TS_TRIGGER_SCOPE_CHANNEL_1_NAME = "Channel 1";
 	public static final String TS_TRIGGER_SCOPE_CHANNEL_2_NAME = "Channel 2";
 	public static final int TS_TRIGGER_SCOPE_DISABLE = 5;
@@ -2074,15 +2083,12 @@ public class Fields {
 	public static final Field WIDEBANDONSECONDBUS = Field.create("WIDEBANDONSECONDBUS", 1304, FieldType.BIT, 0).setBaseOffset(0);
 	public static final Field FUELCLOSEDLOOPCORRECTIONENABLED = Field.create("FUELCLOSEDLOOPCORRECTIONENABLED", 1304, FieldType.BIT, 1).setBaseOffset(0);
 	public static final Field ODDFIREENGINE = Field.create("ODDFIREENGINE", 1304, FieldType.BIT, 2).setBaseOffset(0);
-	public static final Field BOARDUSETACHPULLUP = Field.create("BOARDUSETACHPULLUP", 1304, FieldType.BIT, 3).setBaseOffset(0);
-	public static final Field BOARDUSETEMPPULLUP = Field.create("BOARDUSETEMPPULLUP", 1304, FieldType.BIT, 4).setBaseOffset(0);
 	public static final Field YESUNDERSTANDLOCKING = Field.create("YESUNDERSTANDLOCKING", 1304, FieldType.BIT, 5).setBaseOffset(0);
 	public static final Field SILENTTRIGGERERROR = Field.create("SILENTTRIGGERERROR", 1304, FieldType.BIT, 6).setBaseOffset(0);
 	public static final Field USELINEARCLTSENSOR = Field.create("USELINEARCLTSENSOR", 1304, FieldType.BIT, 7).setBaseOffset(0);
 	public static final Field CANREADENABLED = Field.create("CANREADENABLED", 1304, FieldType.BIT, 8).setBaseOffset(0);
 	public static final Field CANWRITEENABLED = Field.create("CANWRITEENABLED", 1304, FieldType.BIT, 9).setBaseOffset(0);
 	public static final Field USELINEARIATSENSOR = Field.create("USELINEARIATSENSOR", 1304, FieldType.BIT, 10).setBaseOffset(0);
-	public static final Field BOARDUSE2STEPPULLDOWN = Field.create("BOARDUSE2STEPPULLDOWN", 1304, FieldType.BIT, 11).setBaseOffset(0);
 	public static final Field TACHPULSEDURATIONASDUTYCYCLE = Field.create("TACHPULSEDURATIONASDUTYCYCLE", 1304, FieldType.BIT, 12).setBaseOffset(0);
 	public static final Field ISALTERNATORCONTROLENABLED = Field.create("ISALTERNATORCONTROLENABLED", 1304, FieldType.BIT, 13).setBaseOffset(0);
 	public static final Field INVERTPRIMARYTRIGGERSIGNAL = Field.create("INVERTPRIMARYTRIGGERSIGNAL", 1304, FieldType.BIT, 14).setBaseOffset(0);
@@ -2091,13 +2097,6 @@ public class Fields {
 	public static final Field CUTSPARKONHARDLIMIT = Field.create("CUTSPARKONHARDLIMIT", 1304, FieldType.BIT, 17).setBaseOffset(0);
 	public static final Field LAUNCHFUELCUTENABLE = Field.create("LAUNCHFUELCUTENABLE", 1304, FieldType.BIT, 18).setBaseOffset(0);
 	public static final Field LAUNCHSPARKCUTENABLE = Field.create("LAUNCHSPARKCUTENABLE", 1304, FieldType.BIT, 19).setBaseOffset(0);
-	public static final Field BOARDUSECRANKPULLUP = Field.create("BOARDUSECRANKPULLUP", 1304, FieldType.BIT, 20).setBaseOffset(0);
-	public static final Field BOARDUSECAMPULLDOWN = Field.create("BOARDUSECAMPULLDOWN", 1304, FieldType.BIT, 21).setBaseOffset(0);
-	public static final Field BOARDUSECAMVRPULLUP = Field.create("BOARDUSECAMVRPULLUP", 1304, FieldType.BIT, 22).setBaseOffset(0);
-	public static final Field BOARDUSED2PULLDOWN = Field.create("BOARDUSED2PULLDOWN", 1304, FieldType.BIT, 23).setBaseOffset(0);
-	public static final Field BOARDUSED3PULLDOWN = Field.create("BOARDUSED3PULLDOWN", 1304, FieldType.BIT, 24).setBaseOffset(0);
-	public static final Field BOARDUSED4PULLDOWN = Field.create("BOARDUSED4PULLDOWN", 1304, FieldType.BIT, 25).setBaseOffset(0);
-	public static final Field BOARDUSED5PULLDOWN = Field.create("BOARDUSED5PULLDOWN", 1304, FieldType.BIT, 26).setBaseOffset(0);
 	public static final Field VERBOSEISOTP = Field.create("VERBOSEISOTP", 1304, FieldType.BIT, 27).setBaseOffset(0);
 	public static final Field ENGINESNIFFERFOCUSONINPUTS = Field.create("ENGINESNIFFERFOCUSONINPUTS", 1304, FieldType.BIT, 28).setBaseOffset(0);
 	public static final Field LAUNCHACTIVATEINVERTED = Field.create("LAUNCHACTIVATEINVERTED", 1304, FieldType.BIT, 29).setBaseOffset(0);
@@ -3758,15 +3757,12 @@ public class Fields {
 	WIDEBANDONSECONDBUS,
 	FUELCLOSEDLOOPCORRECTIONENABLED,
 	ODDFIREENGINE,
-	BOARDUSETACHPULLUP,
-	BOARDUSETEMPPULLUP,
 	YESUNDERSTANDLOCKING,
 	SILENTTRIGGERERROR,
 	USELINEARCLTSENSOR,
 	CANREADENABLED,
 	CANWRITEENABLED,
 	USELINEARIATSENSOR,
-	BOARDUSE2STEPPULLDOWN,
 	TACHPULSEDURATIONASDUTYCYCLE,
 	ISALTERNATORCONTROLENABLED,
 	INVERTPRIMARYTRIGGERSIGNAL,
@@ -3775,13 +3771,6 @@ public class Fields {
 	CUTSPARKONHARDLIMIT,
 	LAUNCHFUELCUTENABLE,
 	LAUNCHSPARKCUTENABLE,
-	BOARDUSECRANKPULLUP,
-	BOARDUSECAMPULLDOWN,
-	BOARDUSECAMVRPULLUP,
-	BOARDUSED2PULLDOWN,
-	BOARDUSED3PULLDOWN,
-	BOARDUSED4PULLDOWN,
-	BOARDUSED5PULLDOWN,
 	VERBOSEISOTP,
 	ENGINESNIFFERFOCUSONINPUTS,
 	LAUNCHACTIVATEINVERTED,

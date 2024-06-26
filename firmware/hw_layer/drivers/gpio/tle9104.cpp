@@ -39,6 +39,9 @@ typedef enum {
 
 #define TLE9104_PARITY_MASK(val)	((val) & (~BIT(14)))
 
+#define TLE9104_FAULT_GLOBAL		BIT(12)
+#define TLE9104_FAULT_COMM			BIT(13)
+
 #define TLE9104_REG_CTRL			0x00
 #define TLE9104_REG_CFG				0x01
 #define TLE9104_REG_OFF_DIAG_CFG	0x02
@@ -62,12 +65,16 @@ struct Tle9104 : public GpioChip {
 
 	int writePad(size_t pin, int value) override;
 	brain_pin_diag_e getDiag(size_t pin) override;
+	void debug() override;
 
 	int updateDiagState();
+	int updateStatus();
 
 	const tle9104_config* cfg;
 	tle9104_drv_state drv_state;
 private:
+	int spi_validate(uint16_t rx);
+	int spi_rw_array(const uint16_t *tx, uint16_t *rx, int n);
 	int spi_rw(uint16_t tx, uint16_t *rx);
 	int read_reg(uint8_t addr, uint8_t *val);
 	int write_reg(uint8_t addr, uint8_t val);
@@ -77,9 +84,20 @@ private:
 	OutputPin m_en;
 	OutputPin m_resn;
 
+	/* diagnostic registers */
 	uint8_t diag_off;
 	uint8_t diag_on12;
 	uint8_t diag_on34;
+
+	/* statistic */
+	int por_cnt;
+	int wdr_cnt;
+	int init_req_cnt;
+	int fault_cnt;
+	int fault_comm_cnt;
+	int spi_address_err_cnt;
+	int spi_cnt;
+	int spi_parity_err_cnt;
 };
 
 static Tle9104 chips[BOARD_TLE9104_COUNT];
@@ -107,8 +125,30 @@ static bool parityBit(uint16_t val) {
 #endif
 }
 
+int Tle9104::spi_validate(uint16_t rx)
+{
+	/* with parity bit included */
+	bool parityOk = !parityBit(rx);
+	if (!parityOk) {
+		spi_parity_err_cnt++;
+		return -1;
+	}
+
+	if (rx & TLE9104_FAULT_GLOBAL) {
+		fault_cnt++;
+	}
+
+	if (rx & TLE9104_FAULT_COMM) {
+		fault_comm_cnt++;
+	}
+
+	return 0;
+}
+
 int Tle9104::spi_rw(uint16_t tx, uint16_t *rx) {
 	SPIDriver *spi = cfg->spi_bus;
+
+	spi_cnt++;
 
 	// set the parity bit appropriately
 	tx |= parityBit(tx) << 14;
@@ -127,9 +167,9 @@ int Tle9104::spi_rw(uint16_t tx, uint16_t *rx) {
 	spiReleaseBus(spi);
 
 	/* with parity bit included */
-	bool parityOk = !parityBit(rxd);
-	if (!parityOk) {
-		return -1;
+	int ret = spi_validate(rxd);
+	if (ret < 0) {
+		return ret;
 	}
 
 	/* TODO: check Fault Global and Fault Communication flags */
@@ -140,6 +180,54 @@ int Tle9104::spi_rw(uint16_t tx, uint16_t *rx) {
 	}
 
 	return 0;
+}
+
+int Tle9104::spi_rw_array(const uint16_t *tx, uint16_t *rx, int n)
+{
+	int ret = 0;
+	SPIDriver *spi = cfg->spi_bus;
+
+	if ((n <= 0) || (tx == nullptr)) {
+		return -2;
+	}
+
+	/* Acquire ownership of the bus. */
+	spiAcquireBus(spi);
+	/* Setup transfer parameters. */
+	spiStart(spi, &cfg->spi_config);
+
+	for (int i = 0; i < n; i++) {
+		spi_cnt++;
+
+		/* Slave Select assertion. */
+		spiSelect(spi);
+		/* data transfer */
+		uint16_t rxdata = spiPolledExchange(spi, tx[i]);
+
+		if (rx)
+			rx[i] = rxdata;
+		/* Slave Select de-assertion. */
+		spiUnselect(spi);
+
+		/* validate reply */
+		ret = spi_validate(rxdata);
+		if (ret < 0)
+			break;
+
+		if (i >= 1) {
+			/* validate that we received correct answer to previous tx */
+			if (TLE9104_GET_ADDR(tx[i - 1] != TLE9104_GET_ADDR(rxdata))) {
+				spi_address_err_cnt++;
+				ret = -2;
+				break;
+			}
+		}
+	}
+	/* Ownership release. */
+	spiReleaseBus(spi);
+
+	/* no errors for now */
+	return ret;
 }
 
 int Tle9104::read_reg(uint8_t addr, uint8_t *val) {
@@ -170,6 +258,8 @@ int Tle9104::write_reg(uint8_t addr, uint8_t val) {
 
 int Tle9104::chip_init() {
 	int ret;
+
+	init_req_cnt++;
 
 	// disable comms watchdog, enable direct drive on all 4 channels
 	// TODO: should we enable comms watchdog?
@@ -234,6 +324,10 @@ static THD_FUNCTION(tle9104_driver_thread, p)
 			if (ret) {
 				/* set state to TLE6240_FAILED? */
 			}
+			ret = chip.updateStatus();
+			if (ret) {
+				/* set state to TLE6240_FAILED? */
+			}
 		}
 	}
 }
@@ -282,6 +376,36 @@ int Tle9104::updateDiagState() {
 	ret = write_reg(TLE9104_REG_DIAG_OFF, 0);
 	if (ret) {
 		return ret;
+	}
+
+	return 0;
+}
+
+int Tle9104::updateStatus() {
+	int ret;
+
+	uint8_t status;
+	ret = read_reg(TLE9104_REG_GLOBAL_STATUS, &status);
+	if (ret) {
+		return ret;
+	}
+
+	/* Device was reset since last cleared */
+	if (status & BIT(0)) {
+		por_cnt++;
+		need_init = true;
+	}
+	/* Communication watchdog timeout occurred */
+	if (status & BIT(2)) {
+		wdr_cnt++;
+		need_init = true;
+	}
+
+	if (need_init) {
+		ret = chip_init();
+		if (ret == 0) {
+			need_init = false;
+		}
 	}
 
 	return 0;
@@ -347,6 +471,15 @@ brain_pin_diag_e Tle9104::getDiag(size_t pin) {
 	}
 
 	return (brain_pin_diag_e)result;
+}
+
+void Tle9104::debug() {
+	efiPrintf("spi transfers %d with patiry error %d with wrong address %d communication fault counter %d\n",
+		spi_cnt, spi_parity_err_cnt, spi_address_err_cnt, fault_comm_cnt);
+	efiPrintf("fault counter %d communication fault counter %d\n",
+		fault_cnt, fault_comm_cnt);
+	efiPrintf("POR counter %d reinit counter %d WD counter %d\n",
+		por_cnt, init_req_cnt, wdr_cnt);
 }
 
 int Tle9104::init() {

@@ -2,7 +2,7 @@
 // was generated automatically by rusEFI tool config_definition-all.jar based on gen_config.sh integration/rusefi_config.txt
 //
 
-#define adc_channel_e_auto_enum 0="EFI_ADC_NONE",1="EFI_ADC_0",2="EFI_ADC_1",11="EFI_ADC_10",12="EFI_ADC_11",13="EFI_ADC_12",14="EFI_ADC_13",15="EFI_ADC_14",16="EFI_ADC_15",17="EFI_ADC_16",18="EFI_ADC_17",19="EFI_ADC_18",20="EFI_ADC_19",3="EFI_ADC_2",21="EFI_ADC_20",22="EFI_ADC_21",23="EFI_ADC_22",24="EFI_ADC_23",25="EFI_ADC_24",26="EFI_ADC_25",27="EFI_ADC_26",28="EFI_ADC_27",29="EFI_ADC_28",30="EFI_ADC_29",4="EFI_ADC_3",31="EFI_ADC_30",32="EFI_ADC_31",33="EFI_ADC_32",34="EFI_ADC_33",35="EFI_ADC_34",36="EFI_ADC_35",37="EFI_ADC_36",38="EFI_ADC_37",39="EFI_ADC_38",40="EFI_ADC_39",5="EFI_ADC_4",6="EFI_ADC_5",7="EFI_ADC_6",8="EFI_ADC_7",9="EFI_ADC_8",10="EFI_ADC_9",50="EFI_ADC_ERROR",41="EFI_ADC_TOTAL_CHANNELS"
+#define adc_channel_e_auto_enum 0="EFI_ADC_NONE",1="EFI_ADC_0",2="EFI_ADC_1",11="EFI_ADC_10",12="EFI_ADC_11",13="EFI_ADC_12",14="EFI_ADC_13",15="EFI_ADC_14",16="EFI_ADC_15",17="EFI_ADC_16",18="EFI_ADC_17",19="EFI_ADC_18",20="EFI_ADC_19",3="EFI_ADC_2",21="EFI_ADC_20",22="EFI_ADC_21",23="EFI_ADC_22",24="EFI_ADC_23",25="EFI_ADC_24",26="EFI_ADC_25",27="EFI_ADC_26",28="EFI_ADC_27",29="EFI_ADC_28",30="EFI_ADC_29",4="EFI_ADC_3",31="EFI_ADC_30",32="EFI_ADC_31",33="EFI_ADC_32",34="EFI_ADC_33",35="EFI_ADC_34",36="EFI_ADC_35",37="EFI_ADC_36",38="EFI_ADC_37",39="EFI_ADC_38",40="EFI_ADC_39",5="EFI_ADC_4",41="EFI_ADC_40",42="EFI_ADC_41",43="EFI_ADC_42",44="EFI_ADC_43",45="EFI_ADC_44",46="EFI_ADC_45",47="EFI_ADC_46",48="EFI_ADC_47",6="EFI_ADC_5",7="EFI_ADC_6",8="EFI_ADC_7",9="EFI_ADC_8",10="EFI_ADC_9",50="EFI_ADC_ERROR",49="EFI_ADC_TOTAL_CHANNELS"
 #define adc_channel_e_EFI_ADC_0 1
 #define adc_channel_e_EFI_ADC_1 2
 #define adc_channel_e_EFI_ADC_10 11
@@ -38,6 +38,14 @@
 #define adc_channel_e_EFI_ADC_38 39
 #define adc_channel_e_EFI_ADC_39 40
 #define adc_channel_e_EFI_ADC_4 5
+#define adc_channel_e_EFI_ADC_40 41
+#define adc_channel_e_EFI_ADC_41 42
+#define adc_channel_e_EFI_ADC_42 43
+#define adc_channel_e_EFI_ADC_43 44
+#define adc_channel_e_EFI_ADC_44 45
+#define adc_channel_e_EFI_ADC_45 46
+#define adc_channel_e_EFI_ADC_46 47
+#define adc_channel_e_EFI_ADC_47 48
 #define adc_channel_e_EFI_ADC_5 6
 #define adc_channel_e_EFI_ADC_6 7
 #define adc_channel_e_EFI_ADC_7 8
@@ -45,7 +53,7 @@
 #define adc_channel_e_EFI_ADC_9 10
 #define adc_channel_e_EFI_ADC_ERROR 50
 #define adc_channel_e_EFI_ADC_NONE 0
-#define adc_channel_e_EFI_ADC_TOTAL_CHANNELS 41
+#define adc_channel_e_EFI_ADC_TOTAL_CHANNELS 49
 #define adc_channel_e_enum 0="NONE",4="106 - PPS 1",6="109 Ignition Key Voltage",14="34 - IAT",5="50 - TPS 1",1="51 - MAF",9="69 - TPS 2",13="73 - CLT",15="98 - PPS 2",11="Aux P66",12="Aux P67",3="Aux P68"
 #define adc_channel_e_fullenum "NONE","51 - MAF","INVALID","Aux P68","106 - PPS 1","50 - TPS 1","109 Ignition Key Voltage","INVALID","INVALID","69 - TPS 2","INVALID","Aux P66","Aux P67","73 - CLT","34 - IAT","98 - PPS 2"
 #define ADC_CHANNEL_NONE 0
@@ -116,8 +124,10 @@
 #define blend_table_s_size 188
 #define BLOCKING_FACTOR 750
 #define BOARD_CONFIG_FROM_FILE 
+#define BOARD_CONSTANTS_EXTENSIONS_FROM_FILE 
 #define BOARD_DIAG_PANEL1_FROM_FILE 
 #define BOARD_DIAG_PANEL2_FROM_FILE 
+#define BOARD_ENGINE_CONFIGURATION_FROM_FILE 
 #define BOARD_GAUGES_FROM_FILE 
 #define BOARD_INDICATORS_FROM_FILE 
 #define BOARD_MENU_FROM_FILE 
@@ -1277,7 +1287,7 @@
 #define show_microRusEFI_presets false
 #define show_Proteus_presets false
 #define show_test_presets false
-#define SIGNATURE_HASH 257640783
+#define SIGNATURE_HASH 3464549124
 #define SIMULATOR_TUNE_BIN_FILE_NAME "generated/simulator_tune_image.bin"
 #define SIMULATOR_TUNE_BIN_FILE_NAME_PREFIX "generated/simulator_tune_image"
 #define SIMULATOR_TUNE_BIN_FILE_NAME_SUFFIX ".bin"
@@ -1586,7 +1596,9 @@
 #define ts_show_check_engine true
 #define ts_show_clt_iat_pullup false
 #define ts_show_clutch_down true
+#define ts_show_clutch_down_pin true
 #define ts_show_clutch_up true
+#define ts_show_clutch_up_pin true
 #define ts_show_communityCommsLedPid false
 #define ts_show_compression_ratio false
 #define ts_show_cylinder_10 true
@@ -1602,13 +1614,12 @@
 #define ts_show_cylinder_9 true
 #define ts_show_cylinder_bank true
 #define ts_show_debug_mode false
+#define ts_show_ego2 true
 #define ts_show_egt false
 #define ts_show_etb true
 #define ts_show_etb_pins false
 #define ts_show_experimental true
 #define ts_show_fan2_settings true
-#define ts_show_fancy_hardware false
-#define ts_show_fancy_options true
 #define ts_show_firing_order true
 #define ts_show_forced_induction true
 #define ts_show_ford_toyota_tps_pps false
@@ -1663,6 +1674,7 @@
 #define ts_show_tps_sent false
 #define ts_show_trigger_comparator false
 #define ts_show_tunerstudio_port false
+#define ts_show_uegoSerial true
 #define ts_show_vbatt false
 #define ts_show_vehicle_speed_sensor true
 #define ts_show_vehicle_weight false
@@ -1670,14 +1682,16 @@
 #define ts_show_vr_threshold_all false
 #define ts_show_vr_threshold_pins true
 #define ts_show_vvt_output true
-#define TS_SIGNATURE "rusEFI master.2024.06.23.hellen121nissan.257640783"
+#define ts_show_wbo_canbus_index true
+#define ts_show_wbo_canbus_set_index true
+#define TS_SIGNATURE "rusEFI master.2024.06.26.hellen121nissan.3464549124"
 #define TS_SIMULATE_CAN '>'
 #define TS_SIMULATE_CAN_char >
 #define TS_SINGLE_WRITE_COMMAND 'W'
 #define TS_SINGLE_WRITE_COMMAND_char W
 #define TS_TEST_COMMAND 't'
 #define TS_TEST_COMMAND_char t
-#define TS_TOTAL_OUTPUT_SIZE 1752
+#define TS_TOTAL_OUTPUT_SIZE 1760
 #define TS_TRIGGER_SCOPE_CHANNEL_1_NAME "Channel 1"
 #define TS_TRIGGER_SCOPE_CHANNEL_2_NAME "Channel 2"
 #define TS_TRIGGER_SCOPE_DISABLE 5

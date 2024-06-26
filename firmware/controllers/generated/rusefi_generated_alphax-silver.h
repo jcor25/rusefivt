@@ -2,7 +2,7 @@
 // was generated automatically by rusEFI tool config_definition-all.jar based on gen_config.sh integration/rusefi_config.txt
 //
 
-#define adc_channel_e_auto_enum 0="EFI_ADC_NONE",1="EFI_ADC_0",2="EFI_ADC_1",11="EFI_ADC_10",12="EFI_ADC_11",13="EFI_ADC_12",14="EFI_ADC_13",15="EFI_ADC_14",16="EFI_ADC_15",17="EFI_ADC_16",18="EFI_ADC_17",19="EFI_ADC_18",20="EFI_ADC_19",3="EFI_ADC_2",21="EFI_ADC_20",22="EFI_ADC_21",23="EFI_ADC_22",24="EFI_ADC_23",25="EFI_ADC_24",26="EFI_ADC_25",27="EFI_ADC_26",28="EFI_ADC_27",29="EFI_ADC_28",30="EFI_ADC_29",4="EFI_ADC_3",31="EFI_ADC_30",32="EFI_ADC_31",33="EFI_ADC_32",34="EFI_ADC_33",35="EFI_ADC_34",36="EFI_ADC_35",37="EFI_ADC_36",38="EFI_ADC_37",39="EFI_ADC_38",40="EFI_ADC_39",5="EFI_ADC_4",6="EFI_ADC_5",7="EFI_ADC_6",8="EFI_ADC_7",9="EFI_ADC_8",10="EFI_ADC_9",50="EFI_ADC_ERROR",41="EFI_ADC_TOTAL_CHANNELS"
+#define adc_channel_e_auto_enum 0="EFI_ADC_NONE",1="EFI_ADC_0",2="EFI_ADC_1",11="EFI_ADC_10",12="EFI_ADC_11",13="EFI_ADC_12",14="EFI_ADC_13",15="EFI_ADC_14",16="EFI_ADC_15",17="EFI_ADC_16",18="EFI_ADC_17",19="EFI_ADC_18",20="EFI_ADC_19",3="EFI_ADC_2",21="EFI_ADC_20",22="EFI_ADC_21",23="EFI_ADC_22",24="EFI_ADC_23",25="EFI_ADC_24",26="EFI_ADC_25",27="EFI_ADC_26",28="EFI_ADC_27",29="EFI_ADC_28",30="EFI_ADC_29",4="EFI_ADC_3",31="EFI_ADC_30",32="EFI_ADC_31",33="EFI_ADC_32",34="EFI_ADC_33",35="EFI_ADC_34",36="EFI_ADC_35",37="EFI_ADC_36",38="EFI_ADC_37",39="EFI_ADC_38",40="EFI_ADC_39",5="EFI_ADC_4",41="EFI_ADC_40",42="EFI_ADC_41",43="EFI_ADC_42",44="EFI_ADC_43",45="EFI_ADC_44",46="EFI_ADC_45",47="EFI_ADC_46",48="EFI_ADC_47",6="EFI_ADC_5",7="EFI_ADC_6",8="EFI_ADC_7",9="EFI_ADC_8",10="EFI_ADC_9",50="EFI_ADC_ERROR",49="EFI_ADC_TOTAL_CHANNELS"
 #define adc_channel_e_EFI_ADC_0 1
 #define adc_channel_e_EFI_ADC_1 2
 #define adc_channel_e_EFI_ADC_10 11
@@ -38,6 +38,14 @@
 #define adc_channel_e_EFI_ADC_38 39
 #define adc_channel_e_EFI_ADC_39 40
 #define adc_channel_e_EFI_ADC_4 5
+#define adc_channel_e_EFI_ADC_40 41
+#define adc_channel_e_EFI_ADC_41 42
+#define adc_channel_e_EFI_ADC_42 43
+#define adc_channel_e_EFI_ADC_43 44
+#define adc_channel_e_EFI_ADC_44 45
+#define adc_channel_e_EFI_ADC_45 46
+#define adc_channel_e_EFI_ADC_46 47
+#define adc_channel_e_EFI_ADC_47 48
 #define adc_channel_e_EFI_ADC_5 6
 #define adc_channel_e_EFI_ADC_6 7
 #define adc_channel_e_EFI_ADC_7 8
@@ -45,9 +53,9 @@
 #define adc_channel_e_EFI_ADC_9 10
 #define adc_channel_e_EFI_ADC_ERROR 50
 #define adc_channel_e_EFI_ADC_NONE 0
-#define adc_channel_e_EFI_ADC_TOTAL_CHANNELS 41
-#define adc_channel_e_enum "Disabled", "PA0", "PA1", "PA2", "PA3", "PA4", "PA5", "PA6", "PA7", "PB0", "PB1", "PC0", "PC1", "PC2", "PC3", "PC4", "PC5"
-#define adc_channel_e_fullenum "Disabled", "PA0", "PA1", "PA2", "PA3", "PA4", "PA5", "PA6", "PA7", "PB0", "PB1", "PC0", "PC1", "PC2", "PC3", "PC4", "PC5"
+#define adc_channel_e_EFI_ADC_TOTAL_CHANNELS 49
+#define adc_channel_e_enum 0="NONE",5="18A - TPS",13="19A - CLT",14="20A - IAT",11="21A - MAP",6="9A Battery Sense",12="On-board MAP"
+#define adc_channel_e_fullenum "NONE","INVALID","INVALID","INVALID","INVALID","18A - TPS","9A Battery Sense","INVALID","INVALID","INVALID","INVALID","21A - MAP","On-board MAP","19A - CLT","20A - IAT"
 #define ADC_CHANNEL_NONE 0
 #define afr_sensor_s_size 20
 #define air_pressure_sensor_config_s_size 12
@@ -116,12 +124,11 @@
 #define blend_table_s_size 188
 #define BLOCKING_FACTOR 750
 #define BOARD_CONFIG_FROM_FILE 
+#define BOARD_CONSTANTS_EXTENSIONS_FROM_FILE 
 #define BOARD_DIAG_PANEL1_FROM_FILE 
 #define BOARD_DIAG_PANEL2_FROM_FILE 
 #define BOARD_GAUGES_FROM_FILE 
 #define BOARD_INDICATORS_FROM_FILE 
-#define BOARD_MENU_FROM_FILE 
-#define BOARD_OPTIONS_FROM_FILE 
 #define BOARD_PANELS_FROM_FILE 
 #define BOARD_TABLES_FROM_FILE 
 #define BOARD_VE_MENU_FROM_FILE 
@@ -331,7 +338,7 @@
 #define ego_sensor_e_ES_PLX 4
 #define EGT_CHANNEL_COUNT 8
 #define END_OF_CALIBRATION_PADDING 174
-#define engine_configuration_s_size 4212
+#define engine_configuration_s_size 4216
 #define engine_load_mode_e_auto_enum 0="LM_SPEED_DENSITY",2="LM_ALPHA_N",3="LM_LUA",100="LM_MOCK",1="LM_REAL_MAF"
 #define engine_load_mode_e_enum "Speed Density", "MAF Air Charge", "Alpha-N", "Lua"
 #define engine_load_mode_e_LM_ALPHA_N 2
@@ -1136,7 +1143,7 @@
 #define maf_sensor_type_e_CUSTOM 0
 #define maf_sensor_type_e_DensoTODO 3
 #define maf_sensor_type_e_enum "v0", "v1", "v2", "v3"
-#define MAIN_HELP_URL "http://www.rusefi.com/"
+#define MAIN_HELP_URL "https://rusefi.com/s/silver"
 #define MAP_ANGLE_SIZE 8
 #define MAP_sensor_config_s_size 140
 #define MAP_WINDOW_SIZE 8
@@ -1172,8 +1179,8 @@
 #define operation_mode_e_FOUR_STROKE_TWELVE_TIMES_CRANK_SENSOR 6
 #define operation_mode_e_OM_NONE 0
 #define operation_mode_e_TWO_STROKE 3
-#define output_pin_e_enum 0="NONE",303="1A - Injector 4",307="28A Fan Realy",302="2A - Injector 3",301="3A - Injector 2",300="4A - Injector 1",305="5A Fuel Pump Relay",306="6A Idle Output"
-#define output_pin_e_fullenum "NONE","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","4A - Injector 1","3A - Injector 2","2A - Injector 3","1A - Injector 4","INVALID","5A Fuel Pump Relay","6A Idle Output","28A Fan Realy"
+#define output_pin_e_enum 0="NONE",69="10A Coil 4",70="11A Coil 3",71="12A Coil 2",47="13A Coil 1",304="14A Tach Output",303="1A - Injector 4",307="28A Fan Relay",302="2A - Injector 3",301="3A - Injector 2",300="4A - Injector 1",305="5A Fuel Pump Relay",306="6A Idle Output"
+#define output_pin_e_fullenum "NONE","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","13A Coil 1","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","10A Coil 4","11A Coil 3","12A Coil 2","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","4A - Injector 1","3A - Injector 2","2A - Injector 3","1A - Injector 4","14A Tach Output","5A Fuel Pump Relay","6A Idle Output","28A Fan Relay"
 #define PACK_ADD_TEMPERATURE 40
 #define PACK_MULT_AFR 1000
 #define PACK_MULT_AFR_CFG 10
@@ -1195,7 +1202,7 @@
 #define PACK_PERCENT_BYTE_MULT 100.0
 #define PEDAL_TO_TPS_SIZE 8
 #define PERCENT_TRIM_BYTE_PACKING_DIV 0.02
-#define persistent_config_s_size 22800
+#define persistent_config_s_size 22804
 #define pid_s_size 20
 #define pin_input_mode_e_auto_enum 0="PI_DEFAULT",2="PI_PULLDOWN",1="PI_PULLUP"
 #define pin_input_mode_e_enum "DEFAULT", "PULLUP", "PULLDOWN"
@@ -1276,7 +1283,7 @@
 #define show_microRusEFI_presets false
 #define show_Proteus_presets false
 #define show_test_presets false
-#define SIGNATURE_HASH 2229951090
+#define SIGNATURE_HASH 3061021193
 #define SIMULATOR_TUNE_BIN_FILE_NAME "generated/simulator_tune_image.bin"
 #define SIMULATOR_TUNE_BIN_FILE_NAME_PREFIX "generated/simulator_tune_image"
 #define SIMULATOR_TUNE_BIN_FILE_NAME_SUFFIX ".bin"
@@ -1333,7 +1340,7 @@
 #define TOOTH_PACKET_SIZE 2
 #define TOP_DEAD_CENTER_MESSAGE "r"
 #define TORQUE_CURVE_SIZE 6
-#define TOTAL_CONFIG_SIZE 22800
+#define TOTAL_CONFIG_SIZE 22804
 #define TPS_2_BYTE_PACKING_MULT 100
 #define TPS_PPS_TOO_HIGH_THRESHOLD 110
 #define TPS_PPS_TOO_LOW_THRESHOLD -10
@@ -1585,29 +1592,30 @@
 #define ts_show_check_engine true
 #define ts_show_clt_iat_pullup false
 #define ts_show_clutch_down true
+#define ts_show_clutch_down_pin true
 #define ts_show_clutch_up true
+#define ts_show_clutch_up_pin true
 #define ts_show_communityCommsLedPid false
 #define ts_show_compression_ratio false
-#define ts_show_cylinder_10 true
-#define ts_show_cylinder_11 true
-#define ts_show_cylinder_12 true
+#define ts_show_cylinder_10 false
+#define ts_show_cylinder_11 false
+#define ts_show_cylinder_12 false
 #define ts_show_cylinder_2 true
 #define ts_show_cylinder_3 true
 #define ts_show_cylinder_4 true
 #define ts_show_cylinder_5 true
 #define ts_show_cylinder_6 true
-#define ts_show_cylinder_7 true
-#define ts_show_cylinder_8 true
-#define ts_show_cylinder_9 true
+#define ts_show_cylinder_7 false
+#define ts_show_cylinder_8 false
+#define ts_show_cylinder_9 false
 #define ts_show_cylinder_bank true
 #define ts_show_debug_mode false
+#define ts_show_ego2 true
 #define ts_show_egt false
-#define ts_show_etb true
+#define ts_show_etb false
 #define ts_show_etb_pins false
 #define ts_show_experimental true
 #define ts_show_fan2_settings true
-#define ts_show_fancy_hardware false
-#define ts_show_fancy_options true
 #define ts_show_firing_order true
 #define ts_show_forced_induction true
 #define ts_show_ford_toyota_tps_pps true
@@ -1657,11 +1665,12 @@
 #define ts_show_tcu false
 #define ts_show_tle8888 false
 #define ts_show_top_level_can_menu true
-#define ts_show_tps2 true
+#define ts_show_tps2 false
 #define ts_show_tps2_error true
 #define ts_show_tps_sent false
 #define ts_show_trigger_comparator false
 #define ts_show_tunerstudio_port true
+#define ts_show_uegoSerial true
 #define ts_show_vbatt false
 #define ts_show_vehicle_speed_sensor true
 #define ts_show_vehicle_weight false
@@ -1669,14 +1678,16 @@
 #define ts_show_vr_threshold_all false
 #define ts_show_vr_threshold_pins true
 #define ts_show_vvt_output true
-#define TS_SIGNATURE "rusEFI master.2024.06.23.alphax-silver.2229951090"
+#define ts_show_wbo_canbus_index true
+#define ts_show_wbo_canbus_set_index true
+#define TS_SIGNATURE "rusEFI master.2024.06.26.alphax-silver.3061021193"
 #define TS_SIMULATE_CAN '>'
 #define TS_SIMULATE_CAN_char >
 #define TS_SINGLE_WRITE_COMMAND 'W'
 #define TS_SINGLE_WRITE_COMMAND_char W
 #define TS_TEST_COMMAND 't'
 #define TS_TEST_COMMAND_char t
-#define TS_TOTAL_OUTPUT_SIZE 1752
+#define TS_TOTAL_OUTPUT_SIZE 1760
 #define TS_TRIGGER_SCOPE_CHANNEL_1_NAME "Channel 1"
 #define TS_TRIGGER_SCOPE_CHANNEL_2_NAME "Channel 2"
 #define TS_TRIGGER_SCOPE_DISABLE 5

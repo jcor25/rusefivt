@@ -14,6 +14,7 @@ set_board_file() {
     fi
 }
 
+set_board_file BOARD_ENGINE_CONFIGURATION_FILE "${BOARD_DIR}/board_engine_configuration.txt"
 set_board_file BOARD_CONFIG_FILE "${BOARD_DIR}/board_config.txt"
 set_board_file BOARD_OPTIONS_FILE "${BOARD_DIR}/board_options.ini"
 set_board_file BOARD_MENU_FILE "${BOARD_DIR}/board_menu.ini"
@@ -22,6 +23,7 @@ set_board_file BOARD_TABLES_FILE "${BOARD_DIR}/board_tables.ini"
 set_board_file BOARD_PANELS_FILE "${BOARD_DIR}/board_panels.ini"
 set_board_file BOARD_INDICATORS_FILE "${BOARD_DIR}/board_indicators.ini"
 set_board_file BOARD_GAUGES_FILE "${BOARD_DIR}/board_gauges.ini"
+set_board_file BOARD_CONSTANTS_EXTENSIONS_FILE "${BOARD_DIR}/board_constants_extensions.ini"
 set_board_file BOARD_DIAG_PANEL1_FILE "${BOARD_DIR}/board_diag_panel1.ini"
 set_board_file BOARD_DIAG_PANEL2_FILE "${BOARD_DIR}/board_diag_panel2.ini"
 
@@ -31,11 +33,13 @@ COMMON_GEN_CONFIG="
  -readfile LIVE_DATA_MENU_FROM_FILE console/binary/generated/fancy_menu.ini \
  -readfile LIVE_DATA_PANELS_FROM_FILE console/binary/generated/fancy_content.ini \
  -readfile LIVE_DATA_GAUGES_FROM_FILE console/binary/generated/gauges.ini \
+ -readfile BOARD_ENGINE_CONFIGURATION_FROM_FILE ${BOARD_ENGINE_CONFIGURATION_FILE} \
  -readfile BOARD_CONFIG_FROM_FILE ${BOARD_CONFIG_FILE} \
  -readfile BOARD_OPTIONS_FROM_FILE ${BOARD_OPTIONS_FILE} \
  -readfile BOARD_MENU_FROM_FILE ${BOARD_MENU_FILE} \
  -readfile BOARD_VE_MENU_FROM_FILE ${BOARD_VE_MENU_FILE} \
  -readfile BOARD_TABLES_FROM_FILE ${BOARD_TABLES_FILE} \
+ -readfile BOARD_CONSTANTS_EXTENSIONS_FROM_FILE ${BOARD_CONSTANTS_EXTENSIONS_FILE} \
  -readfile BOARD_DIAG_PANEL1_FROM_FILE ${BOARD_DIAG_PANEL1_FILE} \
  -readfile BOARD_DIAG_PANEL2_FROM_FILE ${BOARD_DIAG_PANEL2_FILE} \
  -readfile BOARD_PANELS_FROM_FILE ${BOARD_PANELS_FILE} \

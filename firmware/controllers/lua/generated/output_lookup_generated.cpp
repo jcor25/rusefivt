@@ -764,6 +764,18 @@ float getOutputValueByName(const char *name) {
 // acPressure
 		case 1644550754:
 			return engine->outputChannels.acPressure;
+// rawAuxAnalog1
+		case 98140608:
+			return engine->outputChannels.rawAuxAnalog1;
+// rawAuxAnalog2
+		case 98140609:
+			return engine->outputChannels.rawAuxAnalog2;
+// rawAuxAnalog3
+		case 98140610:
+			return engine->outputChannels.rawAuxAnalog3;
+// rawAuxAnalog4
+		case 98140611:
+			return engine->outputChannels.rawAuxAnalog4;
 // totalFuelCorrection
 #if EFI_ENGINE_CONTROL
 		case -1779658835:
@@ -1178,6 +1190,9 @@ float getOutputValueByName(const char *name) {
 // lua.luaIgnCut
 		case -802271455:
 			return engine->engineState.lua.luaIgnCut;
+// lua.clutchDownState
+		case 133427185:
+			return engine->engineState.lua.clutchDownState;
 // sd.tCharge
 		case -893334680:
 			return engine->engineState.sd.tCharge;
