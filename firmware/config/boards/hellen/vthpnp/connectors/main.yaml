@@ -230,7 +230,7 @@ pins:
 
   - pin: B8
     meta: H144_IN_SENS2
-    class: event_inputs
+    class: switch_inputs
     function: Power steering switch / Digital Input 4
     type: hall
     ts_name: B8  - PSSW/DIN4
@@ -290,7 +290,7 @@ pins:
 
   - pin: D4
     meta: H144_IN_CAM
-    class: switch_inputs
+    class: event_inputs
     function: Service Engine Check / General input 1
     type: hall
     ts_name: D4  - SCS/RES1
