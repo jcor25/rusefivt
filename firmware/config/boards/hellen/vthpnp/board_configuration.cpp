@@ -74,7 +74,7 @@ void setBoardConfigOverrides() {
 
   enableHellenSpi2();
   engineConfiguration->accelerometerSpiDevice = SPI_DEVICE_2;
-	engineConfiguration->accelerometerCsPin = Gpio::H_SPI2_CS;
+	engineConfiguration->accelerometerCsPin = H_SPI2_CS;
 
 	engineConfiguration->binarySerialRxPin = H144_UART2_RX;
 	engineConfiguration->binarySerialTxPin = H144_UART2_TX;
