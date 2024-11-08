@@ -68,9 +68,13 @@ void setBoardConfigOverrides() {
 	engineConfiguration->vrThreshold[0].pin = Gpio::Unassigned;
 	engineConfiguration->vrThreshold[1].pin = Gpio::Unassigned;
 
-        setHellenEnPin(Gpio::H144_GP_IO7);
+  setHellenEnPin(Gpio::H144_GP_IO7);
 
-	hellenMegaSdWithAccelerometer();
+	setHellenSdCardSpi1();
+
+  enableHellenSpi2();
+  engineConfiguration->accelerometerSpiDevice = SPI_DEVICE_2;
+	engineConfiguration->accelerometerCsPin = Gpio::H_SPI2_CS;
 
 	engineConfiguration->binarySerialRxPin = H144_UART2_RX;
 	engineConfiguration->binarySerialTxPin = H144_UART2_TX;
@@ -93,7 +97,7 @@ void setBoardDefaultConfiguration() {
 	setInjectorPins();
 	setIgnitionPins();
 
-    	setHellenMMbaro();
+  setHellenMMbaro();
 	
 	engineConfiguration->enableSoftwareKnock = true;
 
