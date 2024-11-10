@@ -34,12 +34,12 @@ static void setInjectorPins() {
 
 static void setupDefaultSensorInputs() {
 
-	engineConfiguration->tps1_1AdcChannel = MM100_IN_TPS_ANALOG;
-	engineConfiguration->map.sensor.hwChannel = H144_IN_MAP2; // On-board MAP
+	engineConfiguration->tps1_1AdcChannel = EFI_ADC_6;
+	engineConfiguration->map.sensor.hwChannel = EFI_ADC_7; // On-board MAP
 
 	engineConfiguration->boardUseTempPullUp = true;
-	engineConfiguration->clt.adcChannel = MM100_IN_CLT_ANALOG;
-	engineConfiguration->iat.adcChannel = MM100_IN_IAT_ANALOG;
+	engineConfiguration->clt.adcChannel = EFI_ADC_8;
+	engineConfiguration->iat.adcChannel = EFI_ADC_9;
 }
 
 void setBoardConfigOverrides() {
