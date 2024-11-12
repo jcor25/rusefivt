@@ -62,8 +62,8 @@ void setBoardDefaultConfiguration() {
 	setInjectorPins();
 	setupDefaultSensorInputs();
 
-	engineConfiguration->canTxPin = MM100_CAN_TX;
-	engineConfiguration->canRxPin = MM100_CAN_RX;
+	engineConfiguration->canTxPin = Gpio::MM100_CAN_TX;
+	engineConfiguration->canRxPin = Gpio::MM100_CAN_RX;
 
 	engineConfiguration->can2TxPin = Gpio::B5;
 	engineConfiguration->can2RxPin = Gpio::B6;
