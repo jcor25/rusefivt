@@ -1,7 +1,7 @@
 
 pins:
   - pin: A1
-    id: TLE9104_1_OUT_5
+    id: TLE9104_1_OUT_1
     function: Injector 1 Output
     class: outputs
     type: ls
@@ -9,7 +9,7 @@ pins:
     color: orange
 
   - pin: A2
-    id: TLE9104_1_OUT_4
+    id: TLE9104_1_OUT_0
     function: Injector 7 Output
     class: outputs
     type: ls
@@ -31,7 +31,7 @@ pins:
     color: white
 
   - pin: B1
-    id: TLE9104_1_OUT_6
+    id: TLE9104_1_OUT_2
     function: Injector 2 Output
     class: outputs
     type: ls
@@ -39,7 +39,7 @@ pins:
     color: orange
 
   - pin: B2
-    id: TLE9104_1_OUT_7
+    id: TLE9104_1_OUT_3
     function: Injector 8 Output
     class: outputs
     type: ls
