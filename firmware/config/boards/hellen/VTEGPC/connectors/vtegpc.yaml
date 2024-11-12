@@ -18,8 +18,8 @@ pins:
     color: blue
 
   - pin: A3
-    meta: EFI_ADC_15
     class: analog_inputs
+    meta: EFI_ADC_15
     function: Analog 1
     ts_name: ___ - AIN1
     color: white
@@ -108,14 +108,14 @@ pins:
     color: orange
 
   - pin: D3
-    meta: E12
-    class: digital_inputs
+    id: [E12, E12]
+    class: [event_inputs, switch_inputs]
     function: Digital 1
     ts_name: ___ - DIN1
     color: white
 
   - pin: D4
-    meta: E13
+    id: [E13, E13]
     class: digital_inputs
     function: Digital 2
     ts_name: ___ - DIN2

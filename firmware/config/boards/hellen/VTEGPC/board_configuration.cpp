@@ -36,8 +36,7 @@ static void setupDefaultSensorInputs() {
 
 	engineConfiguration->tps1_1AdcChannel = EFI_ADC_6;
 	engineConfiguration->map.sensor.hwChannel = EFI_ADC_7; // On-board MAP
-	EFI_ADC_14
-	EFI_ADC_15
+
 	engineConfiguration->boardUseTempPullUp = true;
 	engineConfiguration->clt.adcChannel = EFI_ADC_8;
 	engineConfiguration->iat.adcChannel = EFI_ADC_9;
