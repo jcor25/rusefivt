@@ -48,7 +48,7 @@ void setBoardConfigOverrides() {
 	/* Force PWR_EN as TLE9104s are powered from +5VA */
 	setHellenMegaEnPin();
 
-	setHellenEnPin(A9);
+	setHellenEnPin(Gpio::A9);
 
 
 	setHellenVbatt();
