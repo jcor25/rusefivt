@@ -1,4 +1,3 @@
-meta: config/boards/hellen_mm100_meta.h
 
 pins:
   - pin: A1
@@ -116,7 +115,7 @@ pins:
 
   - pin: D4
     id: [E13, E13]
-    class: digital_inputs
+    class: [event_inputs, switch_inputs]
     function: Digital 2
     ts_name: ___ - DIN2
     color: white
