@@ -18,13 +18,13 @@ pins:
 
   - pin: A3
     class: analog_inputs
-    meta: EFI_ADC_15
+    id: EFI_ADC_15
     function: Analog 1
     ts_name: ___ - AIN1
     color: white
 
   - pin: A4
-    meta: EFI_ADC_7
+    id: EFI_ADC_7
     class: analog_inputs
     function: Analog 4
     ts_name: ___ - AIN4
@@ -47,14 +47,14 @@ pins:
     color: orange
 
   - pin: B3
-    meta: EFI_ADC_6
+    id: EFI_ADC_6
     class: analog_inputs
     function: Analog 2
     ts_name: ___ - AIN2
     color: white
 
   - pin: B4
-    meta: EFI_ADC_14
+    id: EFI_ADC_14
     class: analog_inputs
     function: Analog 5
     ts_name: ___ - AIN5
@@ -77,14 +77,14 @@ pins:
     color: orange
 
   - pin: C3
-    meta: EFI_ADC_8
+    id: EFI_ADC_8
     class: analog_inputs
     function: Analog 3
     ts_name: ___ - AIN3/TIN1
     color: white
 
   - pin: C4
-    meta: EFI_ADC_9
+    id: EFI_ADC_9
     class: analog_inputs
     function: Analog 6
     ts_name: ___ - AIN6/TIN2
