@@ -48,7 +48,7 @@ void setBoardConfigOverrides() {
 	/* Force PWR_EN as TLE9104s are powered from +5VA */
 	setHellenMegaEnPin();
 
-	setHellenEnPin(Gpio::A9);
+	setHellenEnPin(A9);
 
 
 	setHellenVbatt();
@@ -62,7 +62,6 @@ void setBoardConfigOverrides() {
 
 void setBoardDefaultConfiguration() {
 	setInjectorPins();
-	setIgnitionPins();
 	setupDefaultSensorInputs();
 
 	engineConfiguration->canTxPin = Gpio::MM100_CAN_TX;
