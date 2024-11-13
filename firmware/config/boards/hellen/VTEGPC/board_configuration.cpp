@@ -46,8 +46,7 @@ static void setupDefaultSensorInputs() {
 
 void setBoardConfigOverrides() {
 	/* Force PWR_EN as TLE9104s are powered from +5VA */
-	setHellenEnPin(Gpio::A9, enableBoardOnStartUp);
-
+	setHellenEnPin(A9, enableBoardOnStartUp);
 
 	setHellenVbatt();
 	setHellenCan();
