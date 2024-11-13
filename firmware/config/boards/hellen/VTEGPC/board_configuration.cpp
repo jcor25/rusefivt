@@ -45,7 +45,7 @@ static void setupDefaultSensorInputs() {
 
 void setBoardConfigOverrides() {
 	/* Force PWR_EN as TLE9104s are powered from +5VA */
-	setHellenMegaEnPin();
+	 setHellenEnPin(Gpio::A9);
 
 	setHellenVbatt();
 	setHellenCan();
@@ -59,7 +59,6 @@ void setBoardConfigOverrides() {
 void setBoardDefaultConfiguration() {
 	setInjectorPins();
 	setupDefaultSensorInputs();
-  board_init_ext_gpios();
 
 	engineConfiguration->canTxPin = Gpio::MM100_CAN_TX;
 	engineConfiguration->canRxPin = Gpio::MM100_CAN_RX;
@@ -168,6 +167,12 @@ static void board_init_ext_gpios() {
  * @brief Board-specific initialization code.
  * @todo  Add your board-specific code, if any.
  */
+
+void boardInitHardware(void)
+{
+	board_init_ext_gpios();
+	boardOnConfigurationChange(nullptr); // TODO? invoke this from main firmware code not from board file?
+}
 
 
 static Gpio OUTPUTS[] = {
