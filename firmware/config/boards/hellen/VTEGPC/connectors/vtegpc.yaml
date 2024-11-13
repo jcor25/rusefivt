@@ -206,17 +206,17 @@ pins:
     type: Output
     color: orange
     
-  - pin: HBFB+
+  - pin: HBPFB
     id: EFI_ADC_1
     class: analog_inputs
-    function: HB+ feedback
+    function: HB + feedback
     ts_name: ___
     color: white
 
-    - pin: HBFB-
+  - pin: HBNFB
     id: EFI_ADC_2
     class: analog_inputs
-    function: HB- Feedback
+    function: HB - Feedback
     ts_name: ___
     color: white
 
