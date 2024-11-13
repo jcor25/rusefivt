@@ -145,10 +145,10 @@ pins:
 
   - pin: F1
     id: TLE9104_0_OUT_2
-    function: Injector 5 Output
+    function: Injector 6 Output
     class: outputs
     type: ls
-    ts_name: ___ - INJ5
+    ts_name: ___ - INJ6
     color: orange
 
   - pin: F2
@@ -205,6 +205,20 @@ pins:
     function: Halfbridge driver -
     type: Output
     color: orange
+    
+  - pin: HBFB+
+    id: EFI_ADC_1
+    class: analog_inputs
+    function: HB+ feedback
+    ts_name: ___
+    color: white
+
+    - pin: HBFB-
+    id: EFI_ADC_2
+    class: analog_inputs
+    function: HB- Feedback
+    ts_name: ___
+    color: white
 
 info:
   cid: main
