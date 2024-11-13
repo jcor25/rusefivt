@@ -37,7 +37,6 @@ static void setupDefaultSensorInputs() {
 	engineConfiguration->tps1_1AdcChannel = EFI_ADC_6;
 	engineConfiguration->map.sensor.hwChannel = EFI_ADC_7; // On-board MAP
 
-	engineConfiguration->boardUseTempPullUp = true;
 	engineConfiguration->clt.adcChannel = EFI_ADC_8;
 	engineConfiguration->iat.adcChannel = EFI_ADC_9;
 
@@ -46,7 +45,7 @@ static void setupDefaultSensorInputs() {
 
 void setBoardConfigOverrides() {
 	/* Force PWR_EN as TLE9104s are powered from +5VA */
-	setHellenMegaEnPin();
+	//setHellenMegaEnPin();
 
 	setHellenVbatt();
 	setHellenCan();
