@@ -21,22 +21,21 @@ Gpio getRunningLedPin() {
 }
 
 static void setInjectorPins() {
-	engineConfiguration->injectionPins[0] = Gpio::TLE9104_0_OUT_0;
-	engineConfiguration->injectionPins[1] = Gpio::TLE9104_0_OUT_1;
-	engineConfiguration->injectionPins[2] = Gpio::TLE9104_0_OUT_2;
-	engineConfiguration->injectionPins[3] = Gpio::TLE9104_0_OUT_3;
-	engineConfiguration->injectionPins[4] = Gpio::TLE9104_1_OUT_0;
-	engineConfiguration->injectionPins[5] = Gpio::TLE9104_1_OUT_1;
-	engineConfiguration->injectionPins[6] = Gpio::TLE9104_1_OUT_2;
+	engineConfiguration->injectionPins[0] = Gpio::TLE9104_1_OUT_1;
+	engineConfiguration->injectionPins[1] = Gpio::TLE9104_1_OUT_2;
+	engineConfiguration->injectionPins[2] = Gpio::TLE9104_0_OUT_1;
+	engineConfiguration->injectionPins[3] = Gpio::TLE9104_0_OUT_0;
+	engineConfiguration->injectionPins[4] = Gpio::TLE9104_0_OUT_3;
+	engineConfiguration->injectionPins[5] = Gpio::TLE9104_0_OUT_2;
+	engineConfiguration->injectionPins[6] = Gpio::TLE9104_1_OUT_0;
 	engineConfiguration->injectionPins[7] = Gpio::TLE9104_1_OUT_3;
 }
 
 
 static void setupDefaultSensorInputs() {
 
-	engineConfiguration->tps1_1AdcChannel = EFI_ADC_6;
 	engineConfiguration->map.sensor.hwChannel = EFI_ADC_7; // On-board MAP
-
+  
 	engineConfiguration->clt.adcChannel = EFI_ADC_8;
 	engineConfiguration->iat.adcChannel = EFI_ADC_9;
 
@@ -48,9 +47,7 @@ void setBoardConfigOverrides() {
 	 setHellenEnPin(Gpio::A9);
 
 	setHellenVbatt();
-	setHellenCan();
 	setDefaultHellenAtPullUps();
-	setHellenCan();
 
 	/* Two TLE9104 */
 	enableHellenSpi2();
@@ -63,8 +60,8 @@ void setBoardDefaultConfiguration() {
 	engineConfiguration->canTxPin = Gpio::MM100_CAN_TX;
 	engineConfiguration->canRxPin = Gpio::MM100_CAN_RX;
 
-	engineConfiguration->can2TxPin = Gpio::B5;
-	engineConfiguration->can2RxPin = Gpio::B6;
+	engineConfiguration->can2TxPin = Gpio::B6;
+	engineConfiguration->can2RxPin = Gpio::B5;
 
 	engineConfiguration->etbIo[0].directionPin1 = Gpio::E2;
 	engineConfiguration->etbIo[0].directionPin2 = Gpio::E5;
