@@ -162,11 +162,3 @@ int getBoardMetaOutputsCount() {
 Gpio* getBoardMetaOutputs() {
     return OUTPUTS;
 }
-
-Gpio getCommsLedPin() {
-	return H144_LED2_GREEN;
-}
-
-Gpio getRunningLedPin() {
-	return H144_LED3_BLUE;
-}
